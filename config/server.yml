@@ -1,0 +1,3 @@
+addr: ":8234"
+pow_difficulty: 20
+pow_ttl: 5m

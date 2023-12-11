@@ -1,0 +1,24 @@
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    ports:
+      - '8234:8234'
+    restart: 'no'
+    networks:
+      - pownetwork
+
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    restart: 'no'
+    depends_on:
+      - server
+    networks:
+      - pownetwork
+
+networks:
+  pownetwork:
